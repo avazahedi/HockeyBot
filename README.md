@@ -75,7 +75,6 @@ Packages:
 3. Launch the hockeybot package using the command `ros2 launch hockeybot main.launch.py robot:=false`.
 
 ## Concepts and Overall System Architecture
-The process loop of the robot is as follows:
 
 ### Start-Up Sequence
 
