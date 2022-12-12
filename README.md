@@ -50,7 +50,7 @@ sudo cp src/librealsense/config/99-realsense-libusb.rules /etc/udev/rules.d
 
 9. Git clone `git@github.com:ME495-EmbeddedSystems/hw3group-HockeyBot.git` into the /src directory of the customer workspace. This file will install the ros dependencies required to run this project.
 
-10. Additionally, users will need to install [Ubuntu install](https://docs.opencv.org/4.5.4/d2/de6/tutorial_py_setup_in_ubuntu.html) by using `sudo apt-get install python3-opencv`
+10. Additionally, users will need to install [Ubuntu install](https://docs.opencv.org/4.5.4/d2/de6/tutorial_py_setup_in_ubuntu.html) by using `sudo apt-get install python3-opencv`  
 All code for this package was developed and tested in Python 3.
 
 
@@ -116,7 +116,7 @@ also resets all internal variables and restarts the loop so that the robot can c
 1. To launch the Franka along with the simple_move node `ros2 launch franka_moveit_config moveit.launch.py robot_ip:=dont-care use_fake_hardware:=true`.  
 2. Run the simple_move node with `ros2 run moveit_helper simple_move`.  
     * (Optional) Provide a starting configuration for planning with `ros2 service call /initial_service moveit_interface/srv/Initial "{x: 0.5, y: 0.0, z: 0.0, roll: 1.0, pitch: 0.04, yaw: 0.0}"`.  
-3. Call the service to plan path to specifies goal pose `ros2 service call /goal_service moveit_interface/srv/Goal "{x: 0.5, y: 0.0, z: 0.0, roll: 1.0, pitch: 0.04, yaw: 0.0}"`.  
+3. Call the service to plan a path to a specific goal pose `ros2 service call /goal_service moveit_interface/srv/Goal "{x: 0.5, y: 0.0, z: 0.0, roll: 1.0, pitch: 0.04, yaw: 0.0}"`.  
 4. To execute the plan, use `ros2 service call /execute_service moveit_interface/srv/Execute "exec_bool: True"`.  
-    * If you wish to cancel your plan without executing, pass exec_bool: False instead of True.  
+    * If you wish to cancel your plan without executing, pass `exec_bool: False` instead of `True`.  
 5. To add a box in the planning scene, use `ros2 service call /add_obj moveit_interface/srv/Addobj "{id: 1, x: 0.3, y: 0.6, z: 0.5, dim_x: 0.2, dim_y: 0.2, dim_z: 0.2}"`.  
