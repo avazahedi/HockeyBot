@@ -72,7 +72,8 @@ Packages:
 ## **User Guide**
 1. Follow the instructions [here](https://nu-msr.github.io/ros_notes/ros2/franka.html) to start the Franka.
 2. Connect the RealSense camera (via USB cable) and the Franka Emika Panda arm (via Ethernet cable) to the user's computer.
-3. Launch the hockeybot package using the command `ros2 launch hockeybot main.launch.py robot:=false`.
+3. Launch the hockeybot package using the command `ros2 launch hockeybot main.launch.py robot:=true`.  
+    * If you wish to only run the package in simulation, and not while connected to the Franka Emika Panda arm, use launch argument `robot:=false` instead.
 
 ## Concepts and Overall System Architecture
 
